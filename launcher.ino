@@ -160,7 +160,6 @@ Lightshow lightshow;
 
 void setup()
 {
-    Serial.begin(115200);
 	enableSwitch = Switch(ENABLE_PIN, ENABLE_LED_PIN);
     armedSwitch = Switch(ARMED_PIN, ARMED_LED_PIN);
     buttons[0] = LaunchButton(BTN_1_PIN, BTN_1_LED_PIN, RELAY_1_PIN);
