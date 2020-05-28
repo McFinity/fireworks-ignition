@@ -120,9 +120,11 @@ struct LaunchButton {
         
         if (launchSwitch.isClosed()) {
             launchSwitch.light.on(true);
+            digitalWrite(relayPin, HIGH);
             return;
         }
 
+        digitalWrite(relayPin, LOW);
         launchSwitch.light.setValue(DIM);
     }
 };
@@ -182,11 +184,11 @@ void loop()
     enableSwitch.light.on(isEnabled);
     armedSwitch.light.on(isArmed);
 
-    if (!isEnabled && !isArmed) {
-        lightshow.display(buttons, now);
-    }
-
     for (int i = 0; i < NUM_OF_BUTTONS; i++) {
         buttons[i].processInput(isEnabled, isArmed, now); 
+    }
+
+    if (!isEnabled && !isArmed) {
+        lightshow.display(buttons, now);
     }
 }
