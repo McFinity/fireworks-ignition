@@ -1,0 +1,7 @@
+{
+    "sketch": "launcher.ino",
+    "board": "arduino:avr:mega",
+    "port": "COM10",
+    "programmer": "AVRISP mkII",
+    "configuration": "cpu=atmega2560"
+}
